@@ -20,11 +20,11 @@ openEuler是一款开源操作系统。当前openEuler内核源于Linux，支持
 
 # 2   测试版本说明
 
-本文档测试对象是openEuler 22.03 RISC-V 2022年12月11日和openEuler 22.03-V2 RISC-V（20221228）发布版本，发布范围相较22.03 LTS RISC-V版本主要变动：
+本文档测试对象是openEuler 22.03-V2 RISC-V（20221228）发布版本，发布范围相较22.03 LTS RISC-V版本主要变动：
 
 1. 软件包选型升级
-2. 新增软件：Xfce桌面，Chromium浏览器，Firefox浏览器，Libreoffice办公套件，Tunderbird电子邮件客户端，Eclipse，VLC视频播放工具，GIMP图片编辑工具
-3. 新增全栈支持Unmatched开发板，全栈支持VisionFive开发板，部分支持D1开发板
+2. 新增软件：Xfce桌面，Chromium浏览器，Firefox浏览器，Libreoffice办公套件，Tunderbird电子邮件客户端，Eclipse，GIMP图片编辑工具,MYSQL
+3. 新增全栈支持Unmatched开发板，全栈支持VisionFive开发板，部分支持D1与licheerv开发板
 4. 修复bug和cve
 
 测试环境如下：
@@ -34,24 +34,8 @@ openEuler是一款开源操作系统。当前openEuler内核源于Linux，支持
 | HiFive Unmatched | CPU: SiFive Freedom U740 SoC <br />内存：16GB DDR4<br />存储设备：SanDisk Ultra 32GB micro SD | 通过 |
 | VisionFive | CPU: JH7100 <br />内存：8GB DDR4<br />存储设备：SanDisk Ultra 32GB micro SD | 通过 |
 | D1 | CPU: C906 <br />内存：2GB DDR4<br />存储设备：SanDisk Ultra 32GB micro SD | 基本通过，存在部分缺陷 |
+| licheerv | CPU： 全志 D1 阿里平头哥 玄铁 C906 内核<br />内存： 16bit 512MB DDR3<br />存储设备：SanDisk Ultra 32GB micro SD | 基本通过，存在部分缺陷 |
 | Qemu 6.2/7.0 | CPU: 8<br />内存：8GB <br />存储设备：文件 | 通过 |
-
-20220926版本测试活动策略如下：
-
-| **需求**                        | **测试分层策略**                                             |
-| ------------------------------- | ------------------------------------------------------------ |
-| 支持HiFive Unmatched | 对HiFive Unmatched进行安装、基本功能、兼容性及稳定性的测试 |
-| 支持VisionFive | 对VisionFive进行安装、基本功能、兼容性及稳定性的测试通过 |
-| 支持D1 |启动失败 [启动log](./d1/d1_log.txt) |
-| 支持常用软件和系统设置功能软件 | 验证常用软件和系统设置功能软件在openEuler RISC-V版本上的可安装和基本功能 |
-| 支持Xfce桌面 | 验证Xfce桌面系统在openEuler RISC-V版本上的可安装和基本功能 |
-| 支持Chromium软件 | 验证Chromium软件的安装和软件的基本功能 |
-| 支持Firefox软件 | 验证Firefox软件的安装和软件的基本功能 |
-| 支持Libreoffice软件 | 验证Libreoffice软件的安装和软件的基本功能 |
-| 支持Tunderbird软件 | 验证Tunderbird软件的安装和软件的基本功能 |
-| 支持Eclipse软件 | 验证Eclipse软件的安装和软件的基本功能 |
-| 支持VLC软件 | 验证VLC软件的安装和软件的基本功能 |
-| 支持GIMP软件 | 验证GIMP软件的安装和软件的基本功能 |
 
 openEuler 22.03-V2 RISC-V（20221228）版本测试活动策略如下：
 
@@ -60,14 +44,14 @@ openEuler 22.03-V2 RISC-V（20221228）版本测试活动策略如下：
 | 支持HiFive Unmatched | 对HiFive Unmatched进行安装、基本功能、兼容性及稳定性的测试 |
 | 支持VisionFive | 对VisionFive进行安装、基本功能、兼容性及稳定性的测试通过 |
 | 支持D1 |对D1进行安装、部分基本功能、兼容性及稳定性的测试通过， 缺陷：WiFi 和蓝牙功能不可用，LibreOffice 启动闪退，修改屏幕分辨率后 xfce 显示可能出现问题，HDMI 接口热插拔可能不可用 |
+| 支持licheerv |  | 对licheerv进行安装、基本功能、兼容性及稳定性的测试通过 |
 | 支持常用软件和系统设置功能软件 | 验证常用软件和系统设置功能软件在openEuler RISC-V版本上的可安装和基本功能 |
 | 支持Xfce桌面 | 验证Xfce桌面系统在openEuler RISC-V版本上的可安装和基本功能 |
 | 支持Chromium软件 | 验证Chromium软件的安装和软件的基本功能 |
 | 支持Firefox软件 | 验证Firefox软件的安装和软件的基本功能 |
 | 支持Libreoffice软件 | 验证Libreoffice软件的安装和软件的基本功能，D1启动闪退 |
 | 支持Tunderbird软件 | 验证Tunderbird软件的安装和软件的基本功能 |
-| 支持Eclipse软件 | 验证Eclipse软件的安装和软件的基本功能 |
-| 支持VLC软件 | 验证VLC软件的安装和软件的基本功能 |
+| 支持MYSQL软件 | 验证MYSQL的安装和软件的基本功能 |
 | 支持GIMP软件 | 验证GIMP软件的安装和软件的基本功能 |
 
 本次版本测试快照构建规则：[ORSP004](https://gitee.com/openeuler/RISC-V/blob/master/proposal/ORSP004.md)
@@ -88,21 +72,21 @@ openEuler 22.03-V2 RISC-V（20221228）版本测试活动策略如下：
 
 # 4 测试环境安装
 
-- [x] [使用QEMU安装RISC-V openEuler](./qemu/README.md)
+- [x] [使用QEMU安装RISC-V openEuler](./Installation_Book/QEMU/README.md)
 
-- [x] [使用Unmatched开发板安装RISC-V openEuler](./unmatched/README.md)
+- [x] [使用Unmatched开发板安装RISC-V openEuler](./Installation_Book/Unmatched/README.md)
 
-- [x] [使用Visionfive开发板安装RISC-V openEuler](./visionfive/README.md)
+- [x] [使用Visionfive开发板安装RISC-V openEuler](./Installation_Book/VisionFive/README.md)
 
-- [x] [使用D1开发板安装RISC-V openEuler](./d1/README.md)
+- [x] [使用D1或开发板安装RISC-V openEuler](./Installation_Book/D1_and_LycheePI/README.md)
 
-openEuler 22.03 RISC-V 20220926 QEMU和Unmatched，Visionfive、D1版本通过或基本通过测试发布，
+openEuler 22.03-V2 RISC-V QEMU和Unmatched，Visionfive、D1版本通过或基本通过测试发布，
 
 # 5 测试结论
 
-openEuler 22.03 RISC-V 20220926 版本整体测试按照Tarsier团队的计划，共完成了一轮重点特性测试（20220922）+一轮自动化测试（常用软件和系统设置功能）+一轮回归测试+版本发布验收测试（20220926）；其中第一轮测试聚焦在新移植软件的安装和基础功能测试；一轮自动化测试验证交付版本的常用软件和系统设置功能；一轮回归测通过测试第一轮报告的缺陷，验证缺陷的修复和影响程度；版本发布验收测试是在版本正式发布至官网后开展的轻量化验证活动，旨在保证发布件和测试验证过程交付件的一致性。
+openEuler 22.03-V2 RISC-V 版本整体测试按照Tarsier团队的计划，共完成了一轮重点特性测试+一轮自动化测试（常用软件和系统设置功能）+一轮回归测试；其中第一轮测试聚焦在新移植软件的安装和基础功能测试；一轮自动化测试验证交付版本的常用软件和系统设置功能；一轮回归测通过测试第一轮报告的缺陷，验证缺陷的修复和影响程度；版本发布验收测试是在版本正式发布至官网后开展的轻量化验证活动，旨在保证发布件和测试验证过程交付件的一致性。
 
-openEuler 22.03 RISC-V 20220926 版本共发现问题 32个，P1 0 个，P2 1 个，P3 15 个，P4 13 个，P5 3 个，其他问题均已修复，回归测试结果正常。版本整体质量较好。
+openEuler 22.03-V2 RISC-V 版本共发现问题 32个，P1 0 个，P2  个，P3  个，P4  个，P5  个，其他问题均已修复，回归测试结果正常。版本整体质量较好。
 
 ## 5.1 重点组件测试
 
@@ -110,17 +94,17 @@ openEuler 22.03 RISC-V 20220926 版本共发现问题 32个，P1 0 个，P2 1 �
 
 | 序号 | 组件/特性名称 | 特性质量评估 | 备注 |
 | ---- | ----------------------------------------- | :-------------------------: | ---------------------------------------------------------------------------------------------------------------------- |
-| 1 | [支持HiFive Unmatched](./unmatched/测试报告.xlsx) | <font color=green>█</font> | 全栈支持Unmatched开发板 |
+| 1 | 支持HiFive Unmatched | <font color=green>█</font> | 全栈支持Unmatched开发板 |
 | 2 | 支持VisionFive | <font color=green>█</font> | 全栈支持VisionFive开发板 |
-| 2 | 支持D1 | <font color=green>▲</font> | 部分支持D1开发板, 缺陷：WiFi 和蓝牙功能不可用，LibreOffice 启动闪退，修改屏幕分辨率后 xfce 显示可能出现问题，HDMI 接口热插拔可能不可用 |
-| 3 | [支持xfce桌面](./xfce/测试报告.xlsx) | <font color=green>█</font> | 安装和卸载正常，整体核心功能(重要组件和系统插件)稳定正常，整体质量良好，发现缺陷9个。  QEMU和VisionFive屏保锁屏不能解锁（本发行版将卸载屏保程序）, unmatched屏保解锁成功|
-| 4 | [支持Chromium浏览器](./chromium/测试报告.xlsx) | <font color=green>█</font> | 安装和卸载正常，整体核心功能(重要组件和系统插件)稳定正常，整体质量良好，发现缺陷2个。 |
-| 5 | [支持Firefox浏览器](./firefox/测试报告.xlsx) | <font color=green>█</font> | 安装和卸载正常(此版本源包含97和100两个版本Firefox，安装需使用包全名进行安装，即dnf install firefox-97xxxxx)，整体核心功能(重要组件和系统插件)稳定正常，整体质量良好，发现缺陷8个。 |
-| 6 | [支持Libreoffice浏览器](./libreoffice/测试报告.xlsx) | <font color=green>█</font> | 安装正常，卸载失败，整体核心功能(重要组件和系统插件)稳定正常，整体质量良好，发现缺陷2个。 |
-| 7 | [支持Tunderbird](./tunderbird/测试报告.xlsx) | <font color=green>█</font> | 安装和卸载正常，整体核心功能(重要组件和系统插件)稳定正常，整体质量良好，可以收发邮件。发现缺陷两例，分别为无法保存邮件内容为样例和无法修改语言为英语外的语言，不影响核心功能使用。 |
-| 8 | 支持Eclipse | <font color=green>█</font> | 安装和卸载正常，整体核心功能(重要组件和系统插件)稳定正常，整体质量良好。发现功能缺陷2个，eclipse里面，菜单project下面的open project是灰色的，不能使用，不能打开已有project和eclipse无法配置tomcat。发现性能缺陷1个，软件启动慢，在QEMU和unmatched开发板上的启动时间均超过了5分钟。此测试项目为临时添加，暂未提交测试用例报告。 |
-| 9 | [支持VLC](./vlc/测试报告.xlsx) | <font color=blue>▲</font> | 安装和卸载正常，在QEMU和Visionfive无显卡环境下播放mp4视频黑屏，需要手工设置输出格式为X11，unmatched上工作正常，部分设备上播放视频及音频没有声音，未通过测试，从发行版预装软件中删除。发现缺陷5个。 |
-| 10 | [支持GIMP](./gimp/测试报告.xlsx) | <font color=green>█</font> | 安装和卸载正常，整体核心功能(重要组件和系统插件)稳定正常，整体质量良好。尚未发现功能缺陷。 |
+| 3 | 支持D1 | <font color=green>▲</font> | 部分支持D1开发板, 缺陷：WiFi 和蓝牙功能不可用，LibreOffice 启动闪退，修改屏幕分辨率后 xfce 显示可能出现问题，HDMI 接口热插拔可能不可用 |
+| 4 | 支持licheerv | <font color=green>█</font> | 部分支持licheerv开发板 |
+| 5 | 支持xfce桌面 | <font color=green>█</font> | 安装和卸载正常，整体核心功能(重要组件和系统插件)稳定正常，整体质量良好，发现缺陷个。|
+| 6 | 支持Chromium浏览器 | <font color=green>█</font> | 安装和卸载正常，整体核心功能(重要组件和系统插件)稳定正常，整体质量良好，发现缺陷个。 |
+| 7 | 支持Firefox浏览器 | <font color=green>█</font> | 安装和卸载正常，整体核心功能(重要组件和系统插件)稳定正常，整体质量良好，发现缺陷个。 |
+| 8 | 支持Libreoffice浏览器 | <font color=green>█</font> | 安装正常，卸载失败，整体核心功能(重要组件和系统插件)稳定正常，整体质量良好，发现缺陷个。 |
+| 9 | 支持Tunderbird | <font color=green>█</font> | 安装和卸载正常，整体核心功能(重要组件和系统插件)稳定正常，整体质量良好，可以收发邮件。发现缺陷两例，分别为无法保存邮件内容为样例和无法修改语言为英语外的语言，不影响核心功能使用。 |
+| 10 | 支持MYSQL | <font color=green>█</font> | 安装和卸载正常，整体核心功能(重要组件和系统插件)稳定正常，整体质量良好。发现功能缺陷个 。 |
+| 11 | 支持GIMP | <font color=green>█</font> | 安装和卸载正常，整体核心功能(重要组件和系统插件)稳定正常，整体质量良好。尚未发现功能缺陷。 |
 
 <font color=red>●</font>： 表示特性不稳定，风险高
 
@@ -139,11 +123,6 @@ openEuler 22.03 RISC-V 20220926 版本共发现问题 32个，P1 0 个，P2 1 �
 |             |      |            |                                | 数据不能同步                           |
 |             |      |            |                                | 打不开b站          |                            |
 |             |      |            |                                | 不能进入阅读模式   |                            |
-| VLC         |      |            | 无显卡环境（QEMU, VisionFive），视频播放黑屏，需手工更改视频输出方式X11 |                    |                            |
-|             |      |            | 播放卡顿                       |                    |                            |
-|             |      |            | 文件标题显示错误               |                    |                            |
-|             |      |            | 视频及音频播放无声音             |                 |                              |
-|             |      |            |                                | 字幕列表部分显示乱码       |                            |
 | GIMP        |      |            |                                |                    | 无法打开使用手册           |
 | Thunderbird |      |            |                                |                    | 无法修改语言为英语外的语言 |
 |             |      |            |                                | 无法保存邮件内容为样例   |                      |
@@ -158,53 +137,9 @@ openEuler 22.03 RISC-V 20220926 版本共发现问题 32个，P1 0 个，P2 1 �
 |             |      |            |                                | 改变桌面朝向右，无变化     |                            |
 |             |      |            |                                | 改变桌面朝向上，无变化     |                            |
 |             |      |            |                                | 改变桌面朝向下，无变化     |                            |
-| Ecilpse     |      |            | 不能打开已有项目                |                          |                             |
-|             |      |            | 无法配置tomcat                  |                          |                            |
-|             |      |            |                                | 软件启动时间较长           |                            |
 | Libreoffice |      |            | 无法卸载                        |                          |                            |
 |             |      |            | 无法验证安装问题                |                           |                            |
-
-在经过修复后生成了openEuler-22.03-V1-riscv64版本，较于20220926版本22.03修复了缺陷P2 1个，P3 1个，删除了P5 1个。
-
-|    软件名称         | P1   | P2         | P3                      | P4                 | P5                         | 备注            |
-| ----------- | ---- | ---------- | ------------------------------ | ------------------ | -------------------------- |-------------------------| 
-| Firefox            |      |            | 安装报错                |                    |                   | 原先存在97与100两个版本，目前删除了100只保留了97，此缺陷解决 |
-| Chromium           |      |            |                        |                    |命令行命令行启动需添加—browser| 站会上决定删除此缺陷       |
-| Xfce               |      |自动锁屏无法解锁（QEMU，VisionFive） |              |                     |              | 重新发布了一版删除屏保的镜像，此缺陷解决 |
-
-修复过后openEuler-22.03-V1-riscv64 版本共发现问题 29个，P1 0 个，P2 0 个，P3 13 个，P4 11 个，P5 5 个，以下为22.03-v1版本的重点软件测试缺陷表
-
-|    软件名称  | P1   | P2         | P3                             | P4                 | P5                         |
-| ----------- | ---- | ---------- | ------------------------------ | ------------------ | -------------------------- |
-| Firefox     |      |            | 语言设置选项出现乱码           |                    |                              |
-|             |      |            | 设置语言后页面无法正常显示     |                    |                              |                             
-|             |      |            | 无法停止下载                  |                    |                              |                              
-|             |      |            | 下载项显示空白                  |                            |                                                
-|             |      |            |                                | 数据不能同步                           |                                      
-|             |      |            |                                | 打不开b站          |                            |
-|             |      |            |                                |                   | 不能进入阅读模式              |
-| VLC         |      |            | 无显卡环境（QEMU, VisionFive），视频播放黑屏，需手工更改视频输出方式X11 |                    |                            |
-|             |      |            | 播放卡顿                       |                    |                            |
-|             |      |            | 文件标题显示错误               |                    |                            |
-|             |      |            | 视频及音频播放无声音             |                 |                              |
-|             |      |            |                                | 字幕列表部分显示乱码       |                            |
-| GIMP        |      |            |                                |                    | 无法打开使用手册           |
-| Thunderbird |      |            |                                |                    | 无法修改语言为英语外的语言 |
-|             |      |            |                                | 无法保存邮件内容为样例   |                      |
-| Chromuim    |      |            |                                |                      | 谷歌账号数据同步失败       |
-| Xfce        |      |            |                                |                    | 应用程序查找器无法查看历史命令 |
-|             |      |            | 改伸缩比例                     |                    |                            |
-|             |      |            |                                | 回收站没有默认显示 |                            |
-|             |      |            |                                | 设置桌面为纯色，无变化     |                            |
-|             |      |            |                                | 改变桌面朝向左，无变化     |                            |
-|             |      |            |                                | 改变桌面朝向右，无变化     |                            |
-|             |      |            |                                | 改变桌面朝向上，无变化     |                            |
-|             |      |            |                                | 改变桌面朝向下，无变化     |                            |
-| Ecilpse     |      |            | 不能打开已有项目                |                          |                             |
-|             |      |            | 无法配置tomcat                  |                          |                            |
-|             |      |            |                                | 软件启动时间较长           |                            |
-| Libreoffice |      |            | 无法卸载                        |                          |                            |
-|             |      |            | 无法验证安装问题                |                           |                            |
+|
 
 
 ## 5.2 常见软件和系统功能自动化测试 
